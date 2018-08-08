@@ -2,11 +2,13 @@ package main
 
 import (
 	"server"
-	"fmt"
 )
 
 func main(){
-	print("Hello World")
-	server.StartServer()
-	fmt.Scanf("Server running...")
+	messages := make(chan string)
+	server.StartServer(messages)
+	for{
+		message:= <- messages
+		print(message)
+	}
 }
