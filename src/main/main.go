@@ -1,6 +1,9 @@
 package main
 
-import "server"
+import (
+	"server"
+	"json"
+)
 
 func main(){
 	messages := make(chan string)
@@ -11,7 +14,8 @@ func main(){
 	for{
 		message := <- messages
 		//Do whatever has to be done when receiving a message
-		println(message)
+		repo := json.Decode(message)
+		println(repo.Full_name)
 	}
 
 }

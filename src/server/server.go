@@ -34,7 +34,6 @@ func handleProcessRequest(w http.ResponseWriter, r *http.Request){
 	//Store body into received message buffer
 	messages <- body
 
-	println("Saved to channel")
 	//Send client a success message
 	w.WriteHeader(200)
 }
