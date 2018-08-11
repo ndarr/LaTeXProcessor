@@ -1,9 +1,12 @@
 package json
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"data"
+)
 
-func Decode(raw string) Repository{
-	var m message
+func Decode(raw string) data.Repository{
+	var m data.Message
 	json.Unmarshal([]byte(raw), &m)
 	return m.Repository
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"server"
 	"json"
+	"git"
 )
 
 func main(){
@@ -15,7 +16,7 @@ func main(){
 		message := <- messages
 		//Do whatever has to be done when receiving a message
 		repo := json.Decode(message)
-		println(repo.Full_name)
+		git.Update(repo)
 	}
 
 }

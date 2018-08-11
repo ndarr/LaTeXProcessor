@@ -1,6 +1,6 @@
-package json
+package data
 
-type message struct{
+type Message struct{
 	Ref string
 	Repository Repository
 }
